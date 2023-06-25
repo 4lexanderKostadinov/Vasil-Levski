@@ -1,0 +1,158 @@
+@import url("https://fonts.cdnfonts.com/css/dihjauti-2");
+:root {
+    --white: #ffffff;
+    --yellow: #f4f4e2;
+    --darkyellow: #dfdfab;
+    --darkerdarkyellow: #caca74;
+    --black: #181818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Dihjauti", sans-serif;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background: rgb(244, 244, 226);
+    background: linear-gradient(0deg, rgba(244, 244, 226, 1) 0%, rgba(237, 237, 208, 1) 100%) no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    font-size: 100%;
+}
+
+/* Navbar */
+
+.navbar {
+    padding: 1% 10%;
+    /* padding-top: 1%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: #161616 2px solid;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar-logo {
+    font-size: 1.75rem;
+    font-style: italic;
+    white-space: nowrap;
+    color: var(--black);
+}
+
+.navbar-ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.navbar-ul li {
+    margin: 10px 20px;
+    padding: 5px;
+    position: relative;
+}
+
+.navbar-ul li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--darkyellow);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+    transform: scaleX(0);
+}
+
+.navbar-ul li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-ul li:last-child {
+    margin-right: 0;
+}
+
+.nav-link {
+    color: #161616;
+    font-size: 1.25rem;
+}
+
+/* End of Navbar */
+
+/* Main */
+
+.main {
+    margin: 2% 20px;
+    padding: 2% 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: var(--black) 2px solid;
+}
+
+.fullname {
+    font-size: 2.5rem;
+}
+
+.nickname {
+    font-size: 1.75rem;
+    margin-bottom: 2%;
+    font-style: italic;
+}
+
+.intro {
+    margin: 0 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.portrait-image {
+    margin: 0 2%;
+    width: 35%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* End of Main */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    html {
+        font-size: 90%;
+    }
+    .portrait-image {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 80%;
+    }
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5%;
+    }
+
+    .portrait-image {
+        margin-bottom: 5%;
+        width: 50%;
+    }
+}
