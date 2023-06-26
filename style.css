@@ -27,10 +27,8 @@ body {
 }
 
 /* Navbar */
-
 .navbar {
     padding: 1% 10%;
-    /* padding-top: 1%; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -87,11 +85,9 @@ body {
     color: #161616;
     font-size: 1.25rem;
 }
-
 /* End of Navbar */
 
 /* Main */
-
 .main {
     margin: 2% 20px;
     padding: 2% 10px;
@@ -128,11 +124,14 @@ body {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-
 /* End of Main */
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     html {
         font-size: 90%;
+    }
+    .intro {
+        margin: 0 15%;
     }
     .portrait-image {
         width: 50%;
@@ -144,11 +143,11 @@ body {
         font-size: 80%;
     }
     .intro {
+        margin: 0 5%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 0 5%;
     }
 
     .portrait-image {
