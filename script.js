@@ -6,4 +6,4 @@ hamburger.addEventListener("click", () => {
     navbarUl.classList.toggle("active");
 });
 
-document.querySelectorAll(".nav-link")
+document.querySelectorAll(".nav-link");
