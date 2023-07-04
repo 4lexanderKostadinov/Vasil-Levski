@@ -348,6 +348,57 @@ body::-webkit-scrollbar {
     border-right: 15px solid #fff;
     left: -15px;
 }
+
+.quote {
+    font-style: italic;
+}
+
+.gallery {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin-bottom: 3%;
+}
+
+.card p {
+    font-size: 1.25rem;
+}
+
+.card-img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 14.25px 28.5px, rgba(0, 0, 0, 0.22) 0px 11.25px 9px;
+}
+
+.card-img1,
+.card-img3,
+.card-img5 {
+    object-position: top;
+}
+
+.homage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.tribute-img {
+    margin-bottom: 4%;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 14.25px 28.5px, rgba(0, 0, 0, 0.22) 0px 11.25px 9px;
+    border-radius: 4px;
+}
 /* End of Main */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -456,5 +507,10 @@ body::-webkit-scrollbar {
         border-right: 15px solid #fff;
         border-left: 0;
         left: -15px;
+    }
+
+    .card-img {
+        width: 90%;
+        height: auto;
     }
 }
