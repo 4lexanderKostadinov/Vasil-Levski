@@ -16,6 +16,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-size: 100%;
 }
 
@@ -33,7 +34,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-/* Navbar */
+/* * Navbar */
 .navbar {
     padding: 1% 10%;
     position: relative;
@@ -112,7 +113,7 @@ body::-webkit-scrollbar {
 }
 /* End of Navbar */
 
-/* Main */
+/* * Main */
 .main {
     margin: 2% 20px;
     padding: 2% 10px;
@@ -120,6 +121,16 @@ body::-webkit-scrollbar {
     justify-content: center;
     text-align: center;
     border: var(--black) 2px solid;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2%;
+    font-style: italic;
+}
+
+.section {
+    margin: 0 10%;
 }
 
 .fullname {
@@ -166,14 +177,12 @@ body::-webkit-scrollbar {
     }
 }
 
-.intro {
+.overview {
     margin: 0 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    /* text-align: left; */
 }
 
 .portrait-image {
@@ -183,6 +192,153 @@ body::-webkit-scrollbar {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+.description {
+    font-size: 1.25rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+    margin-top: 0;
+}
+
+.container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container:nth-child(1) {
+    animation-delay: 0;
+}
+.container:nth-child(2) {
+    animation-delay: 1s;
+}
+.container:nth-child(3) {
+    animation-delay: 2s;
+}
+.container:nth-child(4) {
+    animation-delay: 3s;
+}
+.container:nth-child(5) {
+    animation-delay: 4s;
+}
+
+.text-box {
+    padding: 20px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 15px;
+}
+
+.text-box p {
+    margin-bottom: 4%;
+}
+
+.text-box img {
+    width: 90%;
+    border-radius: 1%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.left-container {
+    left: 0;
+}
+
+.right-container {
+    left: 50%;
+}
+
+.container .icon {
+    padding: 5px;
+    position: absolute;
+    width: 40px;
+    background-color: white;
+    border-radius: 4px;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+
+.right-container .icon {
+    left: -20px;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.text-box h2 {
+    font-weight: 400;
+}
+
+.text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right: -15px;
+}
+
+.right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left: -15px;
+}
 /* End of Main */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -190,7 +346,7 @@ body::-webkit-scrollbar {
         font-size: 90%;
     }
 
-    .intro {
+    .overview {
         margin: 0 15%;
     }
 
@@ -204,8 +360,30 @@ body::-webkit-scrollbar {
         font-size: 80%;
     }
 
+    .navbar {
+        padding: 2% 10%;
+    }
+
+    .navbar-ul {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        gap: 0;
+        flex-direction: column;
+        background: rgb(244, 244, 226);
+        background: linear-gradient(0deg, rgba(244, 244, 226, 1) 0%, rgba(237, 237, 208, 1) 0%) no-repeat;
+        background-size: cover;
+        width: 100%;
+        text-align: center;
+        border-bottom: 2px solid var(--black);
+    }
+
+    .navbar-ul.active {
+        left: 0;
+    }
+
     .nav-item {
-        margin: 10px 10px;
+        margin: 12px 0;
     }
 
     .hamburger {
@@ -224,31 +402,11 @@ body::-webkit-scrollbar {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .navbar-ul {
-        position: absolute;
-        top: 100%;
-        left: -100%;
-        gap: 0;
-        flex-direction: column;
-        background: rgb(244, 244, 226);
-        background: linear-gradient(0deg, rgba(244, 244, 226, 1) 0%, rgba(237, 237, 208, 1) 0%) no-repeat;
-        background-size: cover;
-        width: 100%;
-        text-align: center;
-        border-bottom: 2px solid var(--black);
+    .section {
+        margin: 0 5%;
     }
 
-    .nav-item {
-        margin: 16px 0;
-    }
-
-    .navbar-ul.active {
-        left: 0;
-    }
-
-    /* TODO fix the order of the navbar selectors*/
-
-    .intro {
+    .overview {
         margin: 0 5%;
         display: flex;
         flex-direction: column;
@@ -259,5 +417,39 @@ body::-webkit-scrollbar {
     .portrait-image {
         margin-bottom: 5%;
         width: 50%;
+    }
+
+    .timeline {
+        margin: 50px auto;
+    }
+    .timeline::after {
+        left: 30px;
+    }
+    .container {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .text-box {
+        font-size: 13px;
+    }
+
+    .text-box small {
+        margin-bottom: 10px;
+    }
+    .right-container {
+        left: 0;
+    }
+
+    .left-container .icon,
+    .right-container .icon {
+        left: 10px;
+    }
+
+    .left-container-arrow,
+    .right-container-arrow {
+        border-right: 15px solid #fff;
+        border-left: 0;
+        left: -15px;
     }
 }
